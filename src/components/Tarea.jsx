@@ -1,7 +1,14 @@
-export default function Tarea({ tarea }) {
+export default function Tarea({ tarea, onMarcar }) {
   return (
-    <li style={{ textDecoration: tarea.hecha ? "line-through" : "none" }}>
-      {tarea.texto}
+    <li>
+      <input
+        type="checkbox"
+        checked={tarea.hecha}
+        onChange={() => onMarcar(tarea.id)}
+      />
+      <span style={{ textDecoration: tarea.hecha ? "line-through" : "none" }}>
+        {tarea.texto}
+      </span>
     </li>
   );
 }

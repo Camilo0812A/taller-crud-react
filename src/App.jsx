@@ -21,11 +21,17 @@ function App() {
     setTareas((prev) => [...prev, nueva]);
   }
 
+  function marcarTarea(id) {
+    setTareas((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, hecha: !t.hecha } : t))
+    );
+  }
+
   return (
     <>
       <h1>Mis tareas</h1>
       <FormularioTarea onAgregar={agregarTarea} />
-      <ListaTareas tareas={tareas} />
+      <ListaTareas tareas={tareas} onMarcar={marcarTarea} />
     </>
   );
 }
