@@ -2,6 +2,7 @@
 // Autor: David Camilo Colmenares
 
 import { useState } from "react";
+import ListaTareas from "./components/ListaTareas";
 import './App.css'
 
 const tareasIniciales = [
@@ -14,7 +15,12 @@ function App() {
   const [tareas, setTareas] = useState(tareasIniciales);
   console.log(tareas);
 
-  return <h1>Mis tareas</h1>
+  return (
+    <>
+      <h1>Mis tareas</h1>
+      <ListaTareas tareas={tareas} />
+    </>
+  );
 }
 
 export default App
