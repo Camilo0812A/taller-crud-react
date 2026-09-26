@@ -2,6 +2,7 @@
 // Autor: David Camilo Colmenares
 
 import { useState } from "react";
+import FormularioTarea from "./components/FormularioTarea";
 import ListaTareas from "./components/ListaTareas";
 import './App.css'
 
@@ -15,9 +16,15 @@ function App() {
   const [tareas, setTareas] = useState(tareasIniciales);
   console.log(tareas);
 
+  function agregarTarea(texto) {
+    const nueva = { id: crypto.randomUUID(), texto, hecha: false };
+    setTareas((prev) => [...prev, nueva]);
+  }
+
   return (
     <>
       <h1>Mis tareas</h1>
+      <FormularioTarea onAgregar={agregarTarea} />
       <ListaTareas tareas={tareas} />
     </>
   );
