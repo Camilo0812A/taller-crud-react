@@ -1,9 +1,19 @@
 // Taller CRUD en memoria
 // Autor: David Camilo Colmenares
 
+import { useState } from "react";
 import './App.css'
 
+const tareasIniciales = [
+  { id: "t1", texto: "Leer el capítulo 3", hecha: true },
+  { id: "t2", texto: "Entregar el taller de React", hecha: false },
+  { id: "t3", texto: "Repasar map y filter", hecha: false },
+];
+
 function App() {
+  const [tareas, setTareas] = useState(tareasIniciales);
+  console.log(tareas);
+
   return <h1>Mis tareas</h1>
 }
 
