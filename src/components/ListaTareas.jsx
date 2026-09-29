@@ -1,6 +1,6 @@
 import Tarea from "./Tarea";
 
-export default function ListaTareas({ tareas, onMarcar }) {
+export default function ListaTareas({ tareas, onMarcar, onEditar, onEliminar }) {
   if (tareas.length === 0) {
     return <p>No hay tareas</p>;
   }
@@ -8,7 +8,13 @@ export default function ListaTareas({ tareas, onMarcar }) {
   return (
     <ul>
       {tareas.map((t) => (
-        <Tarea key={t.id} tarea={t} onMarcar={onMarcar} />
+        <Tarea
+          key={t.id}
+          tarea={t}
+          onMarcar={onMarcar}
+          onEditar={onEditar}
+          onEliminar={onEliminar}
+        />
       ))}
     </ul>
   );
