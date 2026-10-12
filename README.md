@@ -10,6 +10,8 @@ Lista de tareas hecha con **React + Vite** para practicar el CRUD completo (crea
   <img src="docs/captura.png" alt="Captura de la app Mis tareas" width="600">
 </p>
 
+**Demo en vivo, sin instalar nada:** https://camilo0812a.github.io/taller-crud-react/
+
 ## ✨ Qué hace
 
 - ➕ **Agregar tareas** con un contador de caracteres (máximo 80). Si el texto está vacío o es muy largo, el botón se desactiva.
