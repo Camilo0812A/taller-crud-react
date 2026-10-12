@@ -28,15 +28,16 @@ export default function Tarea({ tarea, onMarcar, onEditar, onEliminar }) {
 
   if (editando) {
     return (
-      <li>
+      <li className="tarea">
         <form onSubmit={guardar}>
           <input
+            type="text"
             value={borrador}
             onChange={(e) => setBorrador(e.target.value)}
             autoFocus
           />
-          <button type="submit">Guardar</button>
-          <button type="button" onClick={cancelar}>
+          <button type="submit" className="btn-guardar">Guardar</button>
+          <button type="button" className="btn-cancelar" onClick={cancelar}>
             Cancelar
           </button>
         </form>
@@ -45,17 +46,21 @@ export default function Tarea({ tarea, onMarcar, onEditar, onEliminar }) {
   }
 
   return (
-    <li>
+    <li className="tarea">
       <input
         type="checkbox"
         checked={tarea.hecha}
         onChange={() => onMarcar(tarea.id)}
       />
-      <span style={{ textDecoration: tarea.hecha ? "line-through" : "none" }}>
+      <span className={tarea.hecha ? "texto hecha" : "texto"}>
         {tarea.texto}
       </span>
-      <button onClick={empezarEdicion}>Editar</button>
-      <button onClick={eliminar}>Eliminar</button>
+      <button className="btn-editar" onClick={empezarEdicion}>
+        Editar
+      </button>
+      <button className="btn-eliminar" onClick={eliminar}>
+        Eliminar
+      </button>
     </li>
   );
 }

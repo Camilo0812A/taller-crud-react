@@ -3,7 +3,7 @@ export default function Resumen({ pendientes, total, onBorrarHechas }) {
   const hechas = total - pendientes;
 
   return (
-    <div>
+    <div className="resumen">
       <span>
         <b>{pendientes} pendientes</b> de {total}
       </span>

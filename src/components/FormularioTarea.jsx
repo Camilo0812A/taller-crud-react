@@ -16,7 +16,7 @@ export default function FormularioTarea({ onAgregar }) {
   }
 
   return (
-    <form onSubmit={manejarEnvio}>
+    <form className="formulario" onSubmit={manejarEnvio}>
       <input
         type="text"
         value={texto}
@@ -26,7 +26,7 @@ export default function FormularioTarea({ onAgregar }) {
       <button type="submit" disabled={estaVacio || esMuyLargo}>
         Agregar
       </button>
-      <p>
+      <p className={esMuyLargo ? "contador error" : "contador"}>
         {texto.length} / {MAXIMO}
       </p>
     </form>
